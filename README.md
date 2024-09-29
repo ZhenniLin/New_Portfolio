@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Intro
+
+Hi, This is my new portfolio codebase, I use typescript + Next.js as the main stack, also implement framer-motion to enhance the interaction effects of my website. Hope you enjoy it.
 
 ## Getting Started
 
