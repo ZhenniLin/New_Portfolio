@@ -2,6 +2,7 @@ import Link from "next/link";
 // components
 import Nav from "./Nav";
 import { Button } from "./ui/button";
+import MobileNav from "./MobileNav";
 
 const Header: React.FC = () => {
   return (
@@ -17,14 +18,19 @@ const Header: React.FC = () => {
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
           <Link href="/contact">
-            <Button variant="outline" className="border-accent border-2">
+            <Button
+              variant="outline"
+              className="border-accent border-2 rounded-[2rem] hover:text-white"
+            >
               Click me
             </Button>
           </Link>
         </div>
 
         {/* mobile nav */}
-        <div className="xl:hidden">mobile nave</div>
+        <div className="xl:hidden">
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
