@@ -27,7 +27,10 @@ const config = {
       colors: {
         primary: "#fff",
         accent: {
-          DEFAULT: "#E78F81",
+          // DEFAULT: "#798645",
+          // DEFAULT: "#61A3BA",
+          DEFAULT: "#5C8374",
+          //#4793AF
           hover: "#FFCFB3",
         },
       },
