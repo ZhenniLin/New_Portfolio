@@ -31,7 +31,7 @@ const config = {
           // DEFAULT: "#61A3BA",
           DEFAULT: "#5C8374",
           //#4793AF
-          hover: "#FFCFB3",
+          hover: "#5C8389",
         },
       },
       borderRadius: {
