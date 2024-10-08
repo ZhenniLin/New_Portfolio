@@ -1,8 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import { FaHtml5, FaCss3, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import {
+  FaHtml5,
+  FaCss3,
+  FaReact,
+  FaNodeJs,
+  FaJava,
+  FaPython,
+  FaDocker,
+  FaAws,
+  FaLinux,
+} from "react-icons/fa";
+import { BiLogoSpringBoot } from "react-icons/bi";
+import {
+  SiFlask,
+  SiMysql,
+  SiTypescript,
+  SiTailwindcss,
+  SiNextdotjs,
+} from "react-icons/si";
+import { DiRedis } from "react-icons/di";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -12,12 +30,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import Link from "next/link";
+import { FileDownIcon } from "lucide-react";
 
 // about data
 const about = {
   title: "About me",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quam ducimus aliquam illum quibusdam temporibus impedit aliquid.",
+  description: "👩‍💻: I'm a passionate and self-motivated developer.",
   info: [
     {
       fieldName: "Name",
@@ -50,8 +71,7 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quam ducimus aliquam illum quibusdam temporibus impedit aliquid.",
+  description: "👩‍💻: I'm a passionate and self-motivated developer.",
   items: [
     {
       company: "Luday Inc.",
@@ -66,7 +86,7 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quam ducimus aliquam illum quibusdam temporibus impedit aliquid.",
+    "🎓: I'm a final year master student at Stockholm University majoring in Information Security.",
   items: [
     {
       institution: "Stockholm university",
@@ -85,36 +105,98 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quam ducimus aliquam illum quibusdam temporibus impedit aliquid.",
+    "🚀: I'm curious and passionate about new technologies and stacks, with the ability to quickly learn and apply them. ",
   skillList: [
     {
       icon: <FaHtml5 />,
       name: "html 5",
+      type: "front",
     },
     {
       icon: <FaCss3 />,
       name: "css 3",
+      type: "front",
     },
     {
       icon: <FaReact />,
       name: "react",
+      type: "front",
     },
     {
       icon: <SiNextdotjs />,
       name: "next.js",
+      type: "front",
     },
     {
       icon: <SiTailwindcss />,
       name: "tailwind.css",
+      type: "front",
     },
     {
       icon: <FaNodeJs />,
       name: "node.js",
+      type: "back",
+    },
+    {
+      icon: <FaJava />,
+      name: "Java",
+      type: "back",
+    },
+    {
+      icon: <BiLogoSpringBoot />,
+      name: "SpringBoot",
+      type: "back",
+    },
+    {
+      icon: <SiTypescript />,
+      name: "Typescript",
+      type: "front",
+    },
+    {
+      icon: <FaPython />,
+      name: "Python",
+      type: "back",
+    },
+    {
+      icon: <SiFlask />,
+      name: "Flask",
+      type: "back",
+    },
+    {
+      icon: <FaLinux />,
+      name: "Linux",
+      type: "devops",
+    },
+    {
+      icon: <FaDocker />,
+      name: "Docker",
+      type: "devops",
+    },
+    {
+      icon: <FaAws />,
+      name: "AWS",
+      type: "devops",
+    },
+    {
+      icon: <SiMysql />,
+      name: "MySQL",
+      type: "data",
+    },
+    {
+      icon: <DiRedis />,
+      name: "Redis",
+      type: "data",
     },
   ],
 };
 
 const Resume = () => {
+  const [selectedSkillType, setSelectedSkillType] = useState("front");
+
+  const handleSkillTypeChange = (type: string) => {
+    setSelectedSkillType(type);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -129,11 +211,21 @@ const Resume = () => {
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6 items-center">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
+            <Link href="Zhenni_Lin.pdf" target="_blank">
+              <Button
+                variant="outline"
+                size="lg"
+                className="uppercase flex items-center gap-1 border-accent border-2 text-accent hover:text-white"
+              >
+                <span>Download CV</span>
+                <FileDownIcon className="text-xl" />
+              </Button>
+            </Link>
           </TabsList>
 
           {/* content */}
@@ -210,25 +302,70 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
+                <hr />
+                <div className="flex justify-between items-center">
+                  <span
+                    className={`cursor-pointer ${
+                      selectedSkillType === "front"
+                        ? "text-accent font-bold border-b-2 border-accent"
+                        : ""
+                    }`}
+                    onClick={() => handleSkillTypeChange("front")}
+                  >
+                    Front-end
+                  </span>
+                  <span
+                    className={`cursor-pointer ${
+                      selectedSkillType === "back"
+                        ? "text-accent font-bold border-b-2 border-accent"
+                        : ""
+                    }`}
+                    onClick={() => handleSkillTypeChange("back")}
+                  >
+                    Back-end
+                  </span>
+                  <span
+                    className={`cursor-pointer ${
+                      selectedSkillType === "data"
+                        ? "text-accent font-bold border-b-2 border-accent"
+                        : ""
+                    }`}
+                    onClick={() => handleSkillTypeChange("data")}
+                  >
+                    Data
+                  </span>
+                  <span
+                    className={`cursor-pointer ${
+                      selectedSkillType === "devops"
+                        ? "text-accent font-bold border-b-2 border-accent"
+                        : ""
+                    }`}
+                    onClick={() => handleSkillTypeChange("devops")}
+                  >
+                    DevOps
+                  </span>
+                </div>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
-                    return (
-                      <li key={index}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-accent/15 rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-100">
-                                {skill.icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
+                  {skills.skillList
+                    .filter((skill) => skill.type === selectedSkillType)
+                    .map((skill, index) => {
+                      return (
+                        <li key={index}>
+                          <TooltipProvider delayDuration={100}>
+                            <Tooltip>
+                              <TooltipTrigger className="w-full h-[150px] bg-accent/15 rounded-xl flex justify-center items-center group">
+                                <div className="text-6xl group-hover:text-accent transition-all duration-100">
+                                  {skill.icon}
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p className="capitalize">{skill.name}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </li>
+                      );
+                    })}
                 </ul>
               </div>
             </TabsContent>

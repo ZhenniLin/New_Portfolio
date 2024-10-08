@@ -3,6 +3,7 @@
 
 import { useSwiper } from "swiper/react";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
+import Link from "next/link";
 
 interface WorkSliderBtnsProps {
   containerStyles: string;

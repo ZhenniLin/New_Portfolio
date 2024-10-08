@@ -5,6 +5,7 @@ import Stats from "@/components/Stat";
 import { Button } from "@/components/ui/button";
 import { FileDownIcon } from "lucide-react";
 import LineMotion from "@/components/LineMotion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,14 +25,16 @@ export default function Home() {
             </p>
             {/* button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-1 border-accent border-2"
-              >
-                <span>Download CV</span>
-                <FileDownIcon className="text-xl" />
-              </Button>
+              <Link href="Zhenni_Lin.pdf" target="_blank">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase flex items-center gap-1 border-accent border-2"
+                >
+                  <span>Download CV</span>
+                  <FileDownIcon className="text-xl" />
+                </Button>
+              </Link>
               <div className="mb-8 xl:mb-0">
                 <Socials
                   containerStyles="flex gap-6"

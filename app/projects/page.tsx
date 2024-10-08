@@ -21,32 +21,48 @@ const projects = [
   {
     num: "01",
     category: "frontend",
-    title: "project 1",
+    title: "Mapty",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi magni nihil delectus, asperiores tenetur pariatur possimus.",
+      "This is my first coding project. Using very basic stacks to build a map marker application",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assests/projects/library.png",
-    live: "",
-    github: "",
+    image: "/assests/projects/mapty.png",
+    live: "https://mapty-zhennilin.netlify.app/",
+    github: "https://github.com/ZhenniLin/Mapty-project",
   },
   {
     num: "02",
     category: "fullstack",
-    title: "project 2",
+    title: "The Wild Oasis",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi magni nihil delectus, asperiores tenetur pariatur possimus.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assests/projects/library.png",
-    live: "",
-    github: "",
+      "Developed a management application for a small boutique hotel with 8 luxurious wooden cabins , incorporating Supabase for backend data management and authentication",
+    stack: [{ name: "Vite" }, { name: "React" }, { name: "Supabase" }],
+    image: "/assests/projects/the-wild-oasis.png",
+    live: "https://wild-oasis-zhennilin.netlify.app/login",
+    github: "https://github.com/ZhenniLin/the-wild-oasis",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
+    category: "fullstack",
+    title: "Library Management",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi magni nihil delectus, asperiores tenetur pariatur possimus.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+      "A book management platform where users can search, borrow, return books, leave ratings, and handle late fees, while admins manage books and user inquiries.",
+    stack: [
+      { name: "Vite" },
+      { name: "React" },
+      { name: "Tailwind.css" },
+      { name: "SpringBoot" },
+      { name: "SpringBoot" },
+    ],
+    image: "/assests/projects/library.png",
+    live: "https://library-front.com/home",
+    github: "https://github.com/ZhenniLin/library-application",
+  },
+  {
+    num: "04",
+    category: "backend",
+    title: "Microservices",
+    description: "Still learning and building...",
+    stack: [{ name: "SpringBoot" }, { name: "Docker" }, { name: "..." }],
     image: "/assests/projects/library.png",
     live: "",
     github: "",
@@ -86,16 +102,19 @@ const Projects = () => {
                 {project.num}
               </div>
               {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-black group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-[40px] font-bold leading-none text-black group-hover:text-accent transition-all duration-500 capitalize">
+                {project.title}
+              </h2>
+              <h2 className="text-[32px] font-bold leading-none text-black/80 group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category} project
               </h2>
               {/* project description */}
               <p className="text-black/60">{project.description}</p>
               {/* stack */}
-              <ul className="flex gap-4">
+              <ul className="flex gap-4 flex-wrap max-w-full">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-xl text-accent">
+                    <li key={index} className="text-md font-bold text-accent">
                       {item.name}
                       {/* remove the last comma */}
                       {index !== project.stack.length - 1 && ","}
@@ -108,7 +127,7 @@ const Projects = () => {
               {/* buttons */}
               <div className="flex items-center gap-4">
                 {/* live project button */}
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-black/15 flex justify-center items-center group">
@@ -121,7 +140,7 @@ const Projects = () => {
                   </TooltipProvider>
                 </Link>
                 {/* github project button */}
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-black/15 flex justify-center items-center group">
