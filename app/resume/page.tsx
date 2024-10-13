@@ -12,6 +12,7 @@ import {
   FaAws,
   FaLinux,
 } from "react-icons/fa";
+import { AiOutlineOpenAI } from "react-icons/ai";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import {
   SiFlask,
@@ -19,6 +20,8 @@ import {
   SiTypescript,
   SiTailwindcss,
   SiNextdotjs,
+  SiMongodb,
+  SiPrisma,
 } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
 import { motion } from "framer-motion";
@@ -183,9 +186,24 @@ const skills = {
       type: "data",
     },
     {
+      icon: <SiMongodb />,
+      name: "MongoDB",
+      type: "data",
+    },
+    {
       icon: <DiRedis />,
       name: "Redis",
       type: "data",
+    },
+    {
+      icon: <SiPrisma />,
+      name: "Prisma",
+      type: "data",
+    },
+    {
+      icon: <AiOutlineOpenAI />,
+      name: "OpenAI",
+      type: "ai",
     },
   ],
 };
@@ -216,6 +234,7 @@ const Resume = () => {
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="about">Certificate</TabsTrigger>
             <Link href="Zhenni_Lin.pdf" target="_blank">
               <Button
                 variant="outline"
@@ -343,6 +362,16 @@ const Resume = () => {
                     onClick={() => handleSkillTypeChange("devops")}
                   >
                     DevOps
+                  </span>
+                  <span
+                    className={`cursor-pointer ${
+                      selectedSkillType === "ai"
+                        ? "text-accent font-bold border-b-2 border-accent"
+                        : ""
+                    }`}
+                    onClick={() => handleSkillTypeChange("ai")}
+                  >
+                    AI
                   </span>
                 </div>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">

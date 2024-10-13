@@ -20,6 +20,25 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
+    category: "fullstack",
+    title: "AI Notes - LLM",
+    description:
+      "FlowBrain is an intelligent note-taking app that enhances your productivity by combining easy note-taking with an AI-powered chatbox.",
+    stack: [
+      { name: "Next.js" },
+      { name: "OpenAI" },
+      { name: "Pinecone" },
+      { name: "MongoDB" },
+      { name: "Prisma" },
+      { name: "Clerk" },
+      { name: "Shadcn UI" },
+    ],
+    image: "/assests/projects/ainote.png",
+    live: "https://ai-note-app-three.vercel.app/",
+    github: "https://github.com/ZhenniLin/ai-note-app",
+  },
+  {
+    num: "02",
     category: "frontend",
     title: "Mapty",
     description:
@@ -30,7 +49,7 @@ const projects = [
     github: "https://github.com/ZhenniLin/Mapty-project",
   },
   {
-    num: "02",
+    num: "03",
     category: "fullstack",
     title: "The Wild Oasis",
     description:
@@ -41,7 +60,7 @@ const projects = [
     github: "https://github.com/ZhenniLin/the-wild-oasis",
   },
   {
-    num: "03",
+    num: "04",
     category: "fullstack",
     title: "Library Management",
     description:
@@ -58,7 +77,7 @@ const projects = [
     github: "https://github.com/ZhenniLin/library-application",
   },
   {
-    num: "04",
+    num: "05",
     category: "backend",
     title: "Microservices",
     description: "Still learning and building...",
