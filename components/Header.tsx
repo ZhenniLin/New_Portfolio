@@ -11,7 +11,7 @@ const Header: React.FC = () => {
         {/* logo */}
         <Link href="/">
           <h1>
-            Zhenni <span className="text-accent">.</span>
+            Jennie <span className="text-accent">.</span>
           </h1>
         </Link>
         {/* nav & click me button*/}

@@ -45,7 +45,7 @@ const about = {
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Zhenni Lin",
+      fieldValue: "Jennie Lin",
     },
     {
       fieldName: "Phone",
@@ -235,7 +235,7 @@ const Resume = () => {
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
             <TabsTrigger value="about">Certificate</TabsTrigger>
-            <Link href="Zhenni_Lin.pdf" target="_blank">
+            <Link href="Jennie_Lin.pdf" target="_blank">
               <Button
                 variant="outline"
                 size="lg"

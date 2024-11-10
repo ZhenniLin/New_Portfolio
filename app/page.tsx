@@ -17,7 +17,7 @@ export default function Home() {
             <span className="text-xl">Software Developer</span>
             <h1 className="h1">
               Hello I&apos;m <br />{" "}
-              <span className="text-accent">Zhenni Lin</span>
+              <span className="text-accent">Jennie Lin</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-black/80">
               I excel at crafting elegant digital experience and I am proficient
@@ -25,7 +25,7 @@ export default function Home() {
             </p>
             {/* button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Link href="Zhenni_Lin.pdf" target="_blank">
+              <Link href="Jennie_Lin.pdf" target="_blank">
                 <Button
                   variant="outline"
                   size="lg"
